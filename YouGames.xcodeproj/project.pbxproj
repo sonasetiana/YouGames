@@ -30,6 +30,7 @@
 		EBE4567A285E45F30067FB09 /* AppResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE45679285E45F30067FB09 /* AppResponse.swift */; };
 		EBE4567C285E46200067FB09 /* AppNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE4567B285E46200067FB09 /* AppNetwork.swift */; };
 		EBE4567E285E46B80067FB09 /* AppConfigs.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE4567D285E46B80067FB09 /* AppConfigs.swift */; };
+		EBE45680285E476A0067FB09 /* NetImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE4567F285E476A0067FB09 /* NetImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		EBE45679285E45F30067FB09 /* AppResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppResponse.swift; sourceTree = "<group>"; };
 		EBE4567B285E46200067FB09 /* AppNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNetwork.swift; sourceTree = "<group>"; };
 		EBE4567D285E46B80067FB09 /* AppConfigs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigs.swift; sourceTree = "<group>"; };
+		EBE4567F285E476A0067FB09 /* NetImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				EB131CFF285CC7C2008B6CF3 /* EmptyView.swift */,
 				EB131D01285CC938008B6CF3 /* ErrorView.swift */,
 				EB131D03285CCB37008B6CF3 /* LoadingView.swift */,
+				EBE4567F285E476A0067FB09 /* NetImageView.swift */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				EB131D61285E0E26008B6CF3 /* DetailInteractor.swift in Sources */,
 				EB131D02285CC938008B6CF3 /* ErrorView.swift in Sources */,
 				EB131D54285E0CB2008B6CF3 /* HomePresenter.swift in Sources */,
+				EBE45680285E476A0067FB09 /* NetImageView.swift in Sources */,
 				EBE45676285E19250067FB09 /* RoundedCorner.swift in Sources */,
 				EB131D59285E0D80008B6CF3 /* AppRouters.swift in Sources */,
 			);
