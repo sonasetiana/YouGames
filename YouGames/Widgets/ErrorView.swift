@@ -8,8 +8,21 @@
 import SwiftUI
 
 struct ErrorView: View {
+    var message : String?
+    var completion : (() -> Void)?
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Spacer()
+            Text(
+                message ?? "An error occurred, please try again."
+            )
+            .foregroundColor(.white)
+            .multilineTextAlignment(.center)
+            Button("Try Again"){
+                
+            }.padding(.top)
+            Spacer()
+        }.background(.black)
     }
 }
 

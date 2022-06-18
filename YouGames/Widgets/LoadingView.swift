@@ -7,9 +7,20 @@
 
 import SwiftUI
 
+struct Loading: View {
+    var body: some View {
+        ProgressView()
+            .tint(.white).progressViewStyle(.circular)
+    }
+}
+
 struct LoadingView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Spacer()
+            Loading()
+            Spacer()
+        }.background(.black)
     }
 }
 

@@ -8,17 +8,55 @@
 
 /* Begin PBXBuildFile section */
 		EB131CF1285CC766008B6CF3 /* YouGamesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB131CF0285CC766008B6CF3 /* YouGamesApp.swift */; };
-		EB131CF3285CC766008B6CF3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB131CF2285CC766008B6CF3 /* ContentView.swift */; };
 		EB131CF5285CC769008B6CF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB131CF4285CC769008B6CF3 /* Assets.xcassets */; };
 		EB131CF8285CC769008B6CF3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB131CF7285CC769008B6CF3 /* Preview Assets.xcassets */; };
+		EB131D00285CC7C2008B6CF3 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB131CFF285CC7C2008B6CF3 /* EmptyView.swift */; };
+		EB131D02285CC938008B6CF3 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB131D01285CC938008B6CF3 /* ErrorView.swift */; };
+		EB131D04285CCB37008B6CF3 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB131D03285CCB37008B6CF3 /* LoadingView.swift */; };
+		EB131D46285E06A8008B6CF3 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB131D45285E06A8008B6CF3 /* AppColors.swift */; };
+		EB131D48285E0A39008B6CF3 /* AppIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB131D47285E0A39008B6CF3 /* AppIcons.swift */; };
+		EB131D4A285E0BE2008B6CF3 /* AppSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB131D49285E0BE2008B6CF3 /* AppSpacing.swift */; };
+		EB131D50285E0C6D008B6CF3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB131D4F285E0C6D008B6CF3 /* HomeView.swift */; };
+		EB131D52285E0C8C008B6CF3 /* ChildHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB131D51285E0C8C008B6CF3 /* ChildHomeView.swift */; };
+		EB131D54285E0CB2008B6CF3 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB131D53285E0CB2008B6CF3 /* HomePresenter.swift */; };
+		EB131D56285E0CBF008B6CF3 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB131D55285E0CBF008B6CF3 /* HomeInteractor.swift */; };
+		EB131D59285E0D80008B6CF3 /* AppRouters.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB131D58285E0D80008B6CF3 /* AppRouters.swift */; };
+		EB131D5B285E0DF6008B6CF3 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB131D5A285E0DF6008B6CF3 /* DetailView.swift */; };
+		EB131D5D285E0E06008B6CF3 /* ChildDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB131D5C285E0E06008B6CF3 /* ChildDetailView.swift */; };
+		EB131D5F285E0E14008B6CF3 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB131D5E285E0E14008B6CF3 /* DetailPresenter.swift */; };
+		EB131D61285E0E26008B6CF3 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB131D60285E0E26008B6CF3 /* DetailInteractor.swift */; };
+		EB131D64285E0EB0008B6CF3 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB131D63285E0EB0008B6CF3 /* ProfileView.swift */; };
+		EBE45676285E19250067FB09 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE45675285E19250067FB09 /* RoundedCorner.swift */; };
+		EBE4567A285E45F30067FB09 /* AppResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE45679285E45F30067FB09 /* AppResponse.swift */; };
+		EBE4567C285E46200067FB09 /* AppNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE4567B285E46200067FB09 /* AppNetwork.swift */; };
+		EBE4567E285E46B80067FB09 /* AppConfigs.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE4567D285E46B80067FB09 /* AppConfigs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EB131CED285CC766008B6CF3 /* YouGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YouGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB131CF0285CC766008B6CF3 /* YouGamesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouGamesApp.swift; sourceTree = "<group>"; };
-		EB131CF2285CC766008B6CF3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EB131CF4285CC769008B6CF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB131CF7285CC769008B6CF3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EB131CFF285CC7C2008B6CF3 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		EB131D01285CC938008B6CF3 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		EB131D03285CCB37008B6CF3 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		EB131D45285E06A8008B6CF3 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
+		EB131D47285E0A39008B6CF3 /* AppIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIcons.swift; sourceTree = "<group>"; };
+		EB131D49285E0BE2008B6CF3 /* AppSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSpacing.swift; sourceTree = "<group>"; };
+		EB131D4F285E0C6D008B6CF3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		EB131D51285E0C8C008B6CF3 /* ChildHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildHomeView.swift; sourceTree = "<group>"; };
+		EB131D53285E0CB2008B6CF3 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		EB131D55285E0CBF008B6CF3 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		EB131D58285E0D80008B6CF3 /* AppRouters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouters.swift; sourceTree = "<group>"; };
+		EB131D5A285E0DF6008B6CF3 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		EB131D5C285E0E06008B6CF3 /* ChildDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildDetailView.swift; sourceTree = "<group>"; };
+		EB131D5E285E0E14008B6CF3 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		EB131D60285E0E26008B6CF3 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
+		EB131D63285E0EB0008B6CF3 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		EBE45675285E19250067FB09 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		EBE45679285E45F30067FB09 /* AppResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppResponse.swift; sourceTree = "<group>"; };
+		EBE4567B285E46200067FB09 /* AppNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNetwork.swift; sourceTree = "<group>"; };
+		EBE4567D285E46B80067FB09 /* AppConfigs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +89,13 @@
 		EB131CEF285CC766008B6CF3 /* YouGames */ = {
 			isa = PBXGroup;
 			children = (
+				EBE45678285E45DD0067FB09 /* Network */,
+				EB131D62285E0E42008B6CF3 /* Entity */,
+				EB131D57285E0D71008B6CF3 /* Router */,
+				EB131D4B285E0C02008B6CF3 /* Modules */,
+				EB131D44285E0690008B6CF3 /* Themes */,
+				EB131CFE285CC79D008B6CF3 /* Widgets */,
 				EB131CF0285CC766008B6CF3 /* YouGamesApp.swift */,
-				EB131CF2285CC766008B6CF3 /* ContentView.swift */,
 				EB131CF4285CC769008B6CF3 /* Assets.xcassets */,
 				EB131CF6285CC769008B6CF3 /* Preview Content */,
 			);
@@ -67,6 +110,92 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		EB131CFE285CC79D008B6CF3 /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				EB131CFF285CC7C2008B6CF3 /* EmptyView.swift */,
+				EB131D01285CC938008B6CF3 /* ErrorView.swift */,
+				EB131D03285CCB37008B6CF3 /* LoadingView.swift */,
+			);
+			path = Widgets;
+			sourceTree = "<group>";
+		};
+		EB131D44285E0690008B6CF3 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				EB131D45285E06A8008B6CF3 /* AppColors.swift */,
+				EB131D47285E0A39008B6CF3 /* AppIcons.swift */,
+				EB131D49285E0BE2008B6CF3 /* AppSpacing.swift */,
+				EBE45675285E19250067FB09 /* RoundedCorner.swift */,
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
+		EB131D4B285E0C02008B6CF3 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				EB131D4E285E0C2B008B6CF3 /* Profile */,
+				EB131D4D285E0C25008B6CF3 /* Detail */,
+				EB131D4C285E0C1E008B6CF3 /* Home */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		EB131D4C285E0C1E008B6CF3 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				EB131D4F285E0C6D008B6CF3 /* HomeView.swift */,
+				EB131D51285E0C8C008B6CF3 /* ChildHomeView.swift */,
+				EB131D53285E0CB2008B6CF3 /* HomePresenter.swift */,
+				EB131D55285E0CBF008B6CF3 /* HomeInteractor.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		EB131D4D285E0C25008B6CF3 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				EB131D5A285E0DF6008B6CF3 /* DetailView.swift */,
+				EB131D5C285E0E06008B6CF3 /* ChildDetailView.swift */,
+				EB131D5E285E0E14008B6CF3 /* DetailPresenter.swift */,
+				EB131D60285E0E26008B6CF3 /* DetailInteractor.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		EB131D4E285E0C2B008B6CF3 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				EB131D63285E0EB0008B6CF3 /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		EB131D57285E0D71008B6CF3 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				EB131D58285E0D80008B6CF3 /* AppRouters.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		EB131D62285E0E42008B6CF3 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		EBE45678285E45DD0067FB09 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				EBE45679285E45F30067FB09 /* AppResponse.swift */,
+				EBE4567B285E46200067FB09 /* AppNetwork.swift */,
+				EBE4567D285E46B80067FB09 /* AppConfigs.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,6 +206,7 @@
 				EB131CE9285CC766008B6CF3 /* Sources */,
 				EB131CEA285CC766008B6CF3 /* Frameworks */,
 				EB131CEB285CC766008B6CF3 /* Resources */,
+				EB131D05285CCE19008B6CF3 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -132,13 +262,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		EB131D05285CCE19008B6CF3 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EB131CE9285CC766008B6CF3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB131CF3285CC766008B6CF3 /* ContentView.swift in Sources */,
+				EB131D5D285E0E06008B6CF3 /* ChildDetailView.swift in Sources */,
+				EB131D50285E0C6D008B6CF3 /* HomeView.swift in Sources */,
+				EBE4567C285E46200067FB09 /* AppNetwork.swift in Sources */,
+				EB131D52285E0C8C008B6CF3 /* ChildHomeView.swift in Sources */,
+				EB131D5B285E0DF6008B6CF3 /* DetailView.swift in Sources */,
+				EB131D56285E0CBF008B6CF3 /* HomeInteractor.swift in Sources */,
+				EB131D4A285E0BE2008B6CF3 /* AppSpacing.swift in Sources */,
+				EB131D00285CC7C2008B6CF3 /* EmptyView.swift in Sources */,
 				EB131CF1285CC766008B6CF3 /* YouGamesApp.swift in Sources */,
+				EB131D48285E0A39008B6CF3 /* AppIcons.swift in Sources */,
+				EBE4567A285E45F30067FB09 /* AppResponse.swift in Sources */,
+				EBE4567E285E46B80067FB09 /* AppConfigs.swift in Sources */,
+				EB131D64285E0EB0008B6CF3 /* ProfileView.swift in Sources */,
+				EB131D46285E06A8008B6CF3 /* AppColors.swift in Sources */,
+				EB131D5F285E0E14008B6CF3 /* DetailPresenter.swift in Sources */,
+				EB131D04285CCB37008B6CF3 /* LoadingView.swift in Sources */,
+				EB131D61285E0E26008B6CF3 /* DetailInteractor.swift in Sources */,
+				EB131D02285CC938008B6CF3 /* ErrorView.swift in Sources */,
+				EB131D54285E0CB2008B6CF3 /* HomePresenter.swift in Sources */,
+				EBE45676285E19250067FB09 /* RoundedCorner.swift in Sources */,
+				EB131D59285E0D80008B6CF3 /* AppRouters.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +441,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"YouGames/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = YouGames/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,6 +470,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"YouGames/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = YouGames/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

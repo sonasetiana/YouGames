@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct EmptyView: View {
+    var message : String?
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Spacer()
+            Text(message ?? "No Data")
+                .foregroundColor(.white)
+            Spacer()
+        }.background(.black)
     }
 }
 

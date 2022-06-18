@@ -14,4 +14,5 @@ struct AppColors {
     static let SecondaryColor = Color("SecondaryColor")
     static let AccentColor = Color("AccentColor")
     static let GoldColor = Color("GoldColor")
+    static let CoverColor = Color("CoverColor")
 }
