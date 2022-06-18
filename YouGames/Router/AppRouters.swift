@@ -10,11 +10,17 @@ import SwiftUI
 
 class AppRouters {
     static func toHomeView() -> some View {
-        return HomeView()
+        let interactor = HomeInteractor()
+        let presenter = HomePresenter() 
+        interactor.presenter = presenter
+        presenter.interactor = interactor
+        return HomeView(presenter: presenter)
     }
+    
     static func toDetailView() -> some View {
         return DetailView()
     }
+    
     static func toProfileView() -> some View {
         return ProfileView()
     }

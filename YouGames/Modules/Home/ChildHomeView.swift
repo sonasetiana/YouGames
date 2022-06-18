@@ -47,26 +47,31 @@ extension ItemGames {
                             .frame(height: 96)
     }
     var imageView : some View {
-        Image(AppIcons.imgGames)
-            .resizable()
-            .frame(width: 104, height: 96)
-            .cornerRadius(6, corners: [.topLeft, .bottomLeft])
+        NetImageView(
+            url: imageUrl ?? "",
+            width: 104,
+            height: 96
+        )
+        .cornerRadius(6, corners: [.topLeft, .bottomLeft])
     }
     var dateView : some View {
-        Text(releaseAt ?? "2013-09-17")
+        Text(releaseAt ?? "")
             .font(.system(size: 10, weight: .light))
             .foregroundColor(.white)
     }
     var titleView : some View {
-        Text(title ?? "Grand Theft Auto V")
+        Text(title ?? "")
             .font(.system(size: 14, weight: .medium))
             .foregroundColor(.white)
+            .lineLimit(1)
+            .multilineTextAlignment(.leading)
     }
     var tagsView : some View {
-        Text(tags ?? "Action,  Adventure")
+        Text(tags ?? "")
             .font(.system(size: 10, weight: .regular))
             .foregroundColor(.white)
             .lineLimit(2)
+            .multilineTextAlignment(.leading)
     }
     var ratingView : some View {
         HStack {
@@ -74,7 +79,7 @@ extension ItemGames {
             Image(AppIcons.imgrRating)
                 .resizable()
                 .frame(width: 16, height: 16)
-            Text(rating ?? "4.7")
+            Text(rating ?? "")
                 .font(.system(size: 14, weight: .bold))
                 .foregroundColor(.white)
         }

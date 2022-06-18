@@ -65,6 +65,7 @@ struct AppNetwork{
             onResponse(nil, nil, nil)
             return
         }
+        print("Request: ",url.absoluteString)
         let config = URLSessionConfiguration.default
         config.allowsCellularAccess = true
         config.waitsForConnectivity = true

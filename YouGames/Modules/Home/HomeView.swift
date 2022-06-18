@@ -8,17 +8,35 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State var keyword: String = ""
+    @ObservedObject var presenter: HomePresenter
     var body: some View {
         NavigationView {
             VStack {
                 toolbarView.padding(.top)
                 searchView
-                listView
+                if self.presenter.loading {
+                    LoadingView()
+                } else if !self.presenter.error.isEmpty {
+                    ErrorView(
+                        message: self.presenter.error,
+                        completion: {
+                            self.presenter.getListGames()
+                        }
+                    )
+                } else {
+                    if self.presenter.items.isEmpty {
+                        EmptyView()
+                    } else {
+                        listView
+                    }
+                }
             }
             .background(AppColors.BackgroudColor)
             .edgesIgnoringSafeArea(.all)
             .navigationBarHidden(true)
+            .onAppear(perform: {
+                self.presenter.getListGames()
+            })
         }
     }
 }
@@ -43,13 +61,13 @@ extension HomeView {
                     Image(systemName: "magnifyingglass")
                     TextField(
                         "Search Your Games",
-                        text: $keyword
+                        text: $presenter.keyword
                     ).foregroundColor(.primary)
                     Button(action : {
-                            self.keyword = ""
+                        self.presenter.keyword = ""
                     }){
                         Image(systemName: "xmark.circle.fill")
-                            .opacity(keyword == "" ? 0 : 1)
+                            .opacity(presenter.keyword == "" ? 0 : 1)
                     }
                 }
                 .padding(EdgeInsets(top: 8, leading: 6, bottom: 8, trailing: 6))
@@ -61,8 +79,29 @@ extension HomeView {
         }
     var listView : some View {
         ScrollView(.vertical, showsIndicators: false) {
-            ForEach(0..<20) {_ in
-                ItemGames()
+            LazyVStack {
+                let items = self.presenter.items
+                ForEach(0..<items.count+1) { i in
+                    if i == items.count {
+                        Loading().opacity(self.presenter.loadingMore ? 1 : 0)
+                    }
+                    if i < items.count {
+                        let item = items[i]
+                        ItemGames(
+                            imageUrl: item.background_image,
+                            releaseAt: item.released,
+                            title: item.name,
+                            tags: arraysToString(items: item.genres ?? []),
+                            rating: String(item.rating ?? 0.0)
+                        ).onAppear(perform: {
+                            if i == items.count - 2 {
+                                print("Nextpage", self.presenter.nextPage)
+                                self.presenter.getMoreGames()
+                                print("Nextpage", self.presenter.nextPage)
+                            }
+                        })
+                    }
+                }
             }
         }
     }
@@ -70,6 +109,6 @@ extension HomeView {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        AppRouters.toHomeView()
     }
 }

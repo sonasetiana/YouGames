@@ -8,6 +8,6 @@
 import Foundation
 
 struct AppConfigs {
-    static let BASE_URL = "https://api.rawg.io/api/games/"
+    static let BASE_URL = "https://api.rawg.io/api/games"
     static let API_KEY = "02af74e73261482fb15a79909b2da5a2"
 }
