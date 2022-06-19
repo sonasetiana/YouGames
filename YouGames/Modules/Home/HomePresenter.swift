@@ -69,8 +69,8 @@ class HomePresenter: ObservableObject, HomePresenterContract {
     
     func onSuccess(results: [GameEntity]) {
         DispatchQueue.main.async {
-            self.items = results
-            if !results.isEmpty {
+            self.items = []//results
+            if !self.items.isEmpty {
                 self.nextPage += 1
             }
         }

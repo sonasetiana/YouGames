@@ -31,7 +31,7 @@ class ImageService : ObservableObject {
     
     func load(url: String) {
         guard let imageUrl = URL(string: url) else { return }
-        let task = URLSession.shared.dataTask(with: imageUrl){ (data, response, error) in
+        let task = URLSession.shared.dataTask(with: imageUrl){ (data, _, _) in
             guard let data = data else { return }
             DispatchQueue.main.async {
                 self.image = UIImage(data: data) ?? UIImage()

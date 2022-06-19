@@ -16,7 +16,3 @@ struct GlobalEntity : Decodable {
 struct PlatformParentEntity : Decodable {
     var platform: GlobalEntity?
 }
-
-
-
-

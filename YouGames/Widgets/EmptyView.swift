@@ -12,7 +12,7 @@ struct EmptyView: View {
     var body: some View {
         VStack{
             Spacer()
-            Text(message ?? "No Data")
+            Text(message ?? "No Data Found")
                 .foregroundColor(.white)
             Spacer()
         }.background(.black)

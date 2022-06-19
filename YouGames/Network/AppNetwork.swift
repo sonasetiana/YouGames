@@ -26,7 +26,7 @@ struct AppNetwork{
                     }
                 }else {
                     DispatchQueue.main.async {
-                        onError("Terjadi kesalahan. Silakan coba lagi nanti.")
+                        onError("There is an error. Please try again later.")
                     }
                 }
             }
@@ -50,7 +50,7 @@ struct AppNetwork{
                     }
                 }else {
                     DispatchQueue.main.async {
-                        onError("Terjadi kesalahan. Silakan coba lagi nanti.")
+                        onError("There is an error. Please try again later.")
                     }
                 }
             }

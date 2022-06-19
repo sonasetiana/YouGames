@@ -43,7 +43,7 @@ func arrayToStores(items: [StoresEntity]) -> [ItemStore] {
         var icon = ""
         switch item.store?.id {
             case 3:
-                icon = AppIcons.imgPlayStation
+            icon = AppIcons.imgPlayStation
             case 11:
                 icon = AppIcons.imgEpicGame
             case 1:
