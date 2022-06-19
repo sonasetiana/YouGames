@@ -27,7 +27,10 @@ struct ProfileView: View {
 extension ProfileView {
     var user : some View {
         HStack {
-            Image(AppIcons.imgUser)
+            Image(AppIcons.imgPhoto)
+                .resizable()
+                .frame(width: 56, height: 56)
+                .clipShape(Circle())
             VStack(alignment: .leading) {
                 Text("Sona Setiana")
                     .font(.system(size: 24, weight: .medium))
@@ -63,7 +66,9 @@ extension ProfileView {
     var logo : some View {
         HStack{
             Spacer()
-            Image(AppIcons.imgLogo).resizable().frame(width: 96, height: 46)
+            Image(AppIcons.imgLogo)
+                .resizable()
+                .frame(width: 96, height: 46)
             Spacer()
         }
     }
