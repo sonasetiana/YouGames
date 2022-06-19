@@ -25,7 +25,7 @@ class HomePresenter: ObservableObject, HomePresenterContract {
     @Published var loadingMore: Bool = false
     @Published var error: String = ""
     @Published var items: [GameEntity] = []
-    @Published var nextPage: Int = 0
+    @Published var nextPage: Int = 1
     private var workItemRef : DispatchWorkItem?
     @Published var keyword = "" {
             didSet {
@@ -35,7 +35,6 @@ class HomePresenter: ObservableObject, HomePresenterContract {
                     if !self.keyword.isEmpty {
                         self.serachGames()
                     }else {
-                        self.nextPage = 0
                         self.getListGames()
                     }
                 }
@@ -44,6 +43,7 @@ class HomePresenter: ObservableObject, HomePresenterContract {
             }
         }
     func getListGames() {
+        self.nextPage = 1
         interactor?.getListGames(page: nextPage)
     }
     
@@ -78,8 +78,8 @@ class HomePresenter: ObservableObject, HomePresenterContract {
     
     func onMoreSuccess(results: [GameEntity]) {
         DispatchQueue.main.async {
+            self.items.append(contentsOf: results)
             if !results.isEmpty {
-                self.items += results
                 self.nextPage += 1
             }
         }

@@ -22,7 +22,7 @@ class DetailInteractor : DetailInteractorContract {
             resultType: DetailGameEntity(),
             onSuccess: { response in
                 self.presenter?.onLoading(isLoading: false)
-                self.presenter?.onSuccess(result: response.results)
+                self.presenter?.onSuccess(result: response)
             },
             onError: { message in
                 self.presenter?.onLoading(isLoading: false)

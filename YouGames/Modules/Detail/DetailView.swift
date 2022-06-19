@@ -46,7 +46,7 @@ extension DetailView {
                     imageUrl: presenter.item?.background_image,
                     releaseAt: presenter.item?.released,
                     title: presenter.item?.name,
-                    tags: arraysToString(items: presenter.item?.tags ?? []),
+                    tags: arraysToString(items: presenter.item?.genres ?? []),
                     rating: String(presenter.item?.rating ?? 0.0))
                 DescriptionBox(description: presenter.item?.description_raw)
                 PlatformBox(
@@ -76,7 +76,11 @@ extension DetailView {
     }
     var imageView : some View {
         ZStack {
-            NetImageView(url: presenter.item?.background_image ?? "")
+            NetImageView(
+                url: presenter.item?.background_image ?? "",
+                width: .infinity,
+                height: .infinity
+            )
             RoundedRectangle(cornerRadius: 0)
                 .foregroundColor(AppColors.CoverColor)
                 .frame(height: .infinity)

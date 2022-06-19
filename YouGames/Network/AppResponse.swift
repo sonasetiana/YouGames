@@ -8,8 +8,9 @@
 import Foundation
 
 struct ListResponse<T : Decodable>: Decodable {
-    var method: String?
-    var status: Bool?
+    var count: Int?
+    var next: String?
+    var previous: String?
     var results: [T]?
 }
 

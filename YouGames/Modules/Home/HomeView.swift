@@ -80,13 +80,12 @@ extension HomeView {
     var listView : some View {
         ScrollView(.vertical, showsIndicators: false) {
             LazyVStack {
-                let items = self.presenter.items
-                ForEach(0..<items.count+1) { i in
-                    if i == items.count {
+                ForEach(0..<self.presenter.items.count+1, id: \.self) { i in
+                    if i == self.presenter.items.count {
                         Loading().opacity(self.presenter.loadingMore ? 1 : 0)
                     }
-                    if i < items.count {
-                        let item = items[i]
+                    if i < self.presenter.items.count {
+                        let item = self.presenter.items[i]
                         ItemGames(
                             id: item.id ?? 0,
                             imageUrl: item.background_image,
@@ -95,10 +94,8 @@ extension HomeView {
                             tags: arraysToString(items: item.genres ?? []),
                             rating: String(item.rating ?? 0.0)
                         ).onAppear(perform: {
-                            if i == items.count - 2 {
-                                print("Nextpage", self.presenter.nextPage)
+                            if i == self.presenter.items.count - 2 {
                                 self.presenter.getMoreGames()
-                                print("Nextpage", self.presenter.nextPage)
                             }
                         })
                     }

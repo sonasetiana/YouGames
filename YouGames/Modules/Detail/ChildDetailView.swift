@@ -33,23 +33,21 @@ struct TitleBox: View {
 
 extension TitleBox {
     var dateView : some View {
-        HStack {
-            Spacer()
-            Text(releaseAt ?? "")
-                .font(.system(size: 12, weight: .light))
-                .foregroundColor(.white)
-        }
+        Text(releaseAt ?? "")
+            .font(.system(size: 12, weight: .light))
+            .foregroundColor(.white)
     }
     var titleView : some View {
         Text(title ?? "")
             .font(.system(size: 16, weight: .bold))
             .foregroundColor(.white)
+            .padding(.vertical, AppSpacing.tiny)
     }
     var tagsView : some View {
         Text(tags ?? "")
             .font(.system(size: 12, weight: .regular))
             .foregroundColor(.white)
-            .lineLimit(2)
+            .lineLimit(4)
     }
     var ratingView : some View {
         HStack {

@@ -40,6 +40,4 @@ class DetailPresenter : ObservableObject, DetailPresenterContract {
             self.error = message
         }
     }
-    
-    
 }

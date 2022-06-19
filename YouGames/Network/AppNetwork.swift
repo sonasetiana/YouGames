@@ -36,7 +36,7 @@ struct AppNetwork{
     static func objectRequest<T: Decodable>(
          endPoint: String,
          resultType: T,
-         onSuccess: @escaping (ObjectResponse<T>) -> Void,
+         onSuccess: @escaping (T) -> Void,
          onError: @escaping (String) -> Void
      ){
          request(
@@ -44,7 +44,7 @@ struct AppNetwork{
             onResponse: { (data, response, _) in
                 if response?.statusCode == 200 {
                     let decoder = JSONDecoder()
-                    guard let result = try? decoder.decode(ObjectResponse<T>.self, from: data!) else { return }
+                    guard let result = try? decoder.decode(T.self, from: data!) else { return }
                     DispatchQueue.main.async {
                         onSuccess(result)
                     }

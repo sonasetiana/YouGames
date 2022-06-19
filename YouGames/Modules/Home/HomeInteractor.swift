@@ -21,7 +21,7 @@ class HomeInteractor : HomeInteractorContract {
     func getListGames(page: Int) {
         presenter?.onLoading(isLoading: true)
         AppNetwork.listRequest(
-            endPoint: "?page_size=\(page)&key=\(AppConfigs.API_KEY)",
+            endPoint: "?page_size=10&key=\(AppConfigs.API_KEY)&page=\(page)",
             resultType: GameEntity(),
             onSuccess: { response in
                 self.presenter?.onLoading(isLoading: false)
@@ -37,7 +37,7 @@ class HomeInteractor : HomeInteractorContract {
     func getMoreListGames(page: Int) {
         presenter?.onLoadingMore(isLoading: true)
         AppNetwork.listRequest(
-            endPoint: "?page_size=\(page)&key=\(AppConfigs.API_KEY)",
+            endPoint: "?page_size=10&key=\(AppConfigs.API_KEY)&page=\(page)",
             resultType: GameEntity(),
             onSuccess: { response in
                 self.presenter?.onLoadingMore(isLoading: false)
