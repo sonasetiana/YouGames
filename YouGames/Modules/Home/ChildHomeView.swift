@@ -9,18 +9,19 @@ import SwiftUI
 
 struct ChildHomeView: View {
     var body: some View {
-        ItemGames()
+        ItemGames(id: 3498)
     }
 }
 
 struct ItemGames: View {
+    var id: Int
     var imageUrl: String?
     var releaseAt: String?
     var title: String?
     var tags: String?
     var rating: String?
     var body: some View {
-        NavigationLink(destination: AppRouters.toDetailView) {
+        NavigationLink(destination: AppRouters.toDetailView(id: id)) {
             ZStack {
                 backgroudView
                 HStack {

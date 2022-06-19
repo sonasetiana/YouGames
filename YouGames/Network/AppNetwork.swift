@@ -17,7 +17,7 @@ struct AppNetwork{
     ){
          request(
             endPoint: endPoint,
-            onResponse: { (data, response, error) in
+            onResponse: { (data, response, _) in
                 if response?.statusCode == 200 {
                     let decoder = JSONDecoder()
                     guard let result = try? decoder.decode(ListResponse<T>.self, from: data!) else { return }
@@ -41,7 +41,7 @@ struct AppNetwork{
      ){
          request(
             endPoint: endPoint,
-            onResponse: { (data, response, error) in
+            onResponse: { (data, response, _) in
                 if response?.statusCode == 200 {
                     let decoder = JSONDecoder()
                     guard let result = try? decoder.decode(ObjectResponse<T>.self, from: data!) else { return }

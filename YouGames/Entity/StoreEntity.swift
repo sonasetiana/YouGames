@@ -20,3 +20,8 @@ struct StoresEntity : Decodable {
     var store : StoreEntity?
 }
 
+struct ItemStore {
+    var name: String?
+    var domain: String?
+    var icon: String?
+}

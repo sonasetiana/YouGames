@@ -8,12 +8,32 @@
 import SwiftUI
 
 struct DetailView: View {
+    var id: Int
+    @ObservedObject var presenter: DetailPresenter
     var body: some View {
-        VStack {
-            contentView
+        HStack {
+            Spacer()
+            VStack {
+                if presenter.loading {
+                    LoadingView()
+                }else if !presenter.error.isEmpty {
+                    ErrorView(
+                        message: presenter.error,
+                        completion: {
+                            presenter.getDetail(id: id)
+                        }
+                    )
+                }else {
+                    contentView
+                }
+            }
+            Spacer()
         }
         .edgesIgnoringSafeArea(.all)
         .background(AppColors.BackgroudColor)
+        .onAppear(perform: {
+            presenter.getDetail(id: id)
+        })
     }
 }
 
@@ -22,37 +42,41 @@ extension DetailView {
         ScrollView(.vertical, showsIndicators: false) {
             VStack {
                 imageView
-                TitleBox()
-                DescriptionBox()
+                TitleBox(
+                    imageUrl: presenter.item?.background_image,
+                    releaseAt: presenter.item?.released,
+                    title: presenter.item?.name,
+                    tags: arraysToString(items: presenter.item?.tags ?? []),
+                    rating: String(presenter.item?.rating ?? 0.0))
+                DescriptionBox(description: presenter.item?.description_raw)
                 PlatformBox(
-                    platforms: [AppIcons.imgPC, AppIcons.imgXbox, AppIcons.imgNitendo, AppIcons.imgPlayStation]
+                    platforms: arrayToPlatforms(items: presenter.item?.parent_platforms ?? [])
                 )
                 DescriptionBox(
                     title: "Tags",
-                    description: "Singleplayer, Steam Achievements, Multiplayer, Atmospheric, Full controller support, RPG, Co-OP, Great Soundtrack, Open World, cooperative, First-Person, Third Person"
+                    description: arraysToString(items: presenter.item?.tags ?? [])
                 )
                 StoresBox(
-                    stores: [AppIcons.imgPlayStation, AppIcons.imgXbox, AppIcons.imgEpicGame, AppIcons.imgSteamGame]
+                    items: arrayToStores(items: presenter.item?.stores ?? [])
                 )
                 DescriptionBox(
                     title: "Developers",
-                    description: "Rockstar North, Rockstar Games"
+                    description: arraysToString(items: presenter.item?.developers ?? [])
                 )
                 DescriptionBox(
                     title: "Publishers",
-                    description: "Rockstar Games"
+                    description: arraysToString(items: presenter.item?.publishers ?? [])
                 )
                 DescriptionBox(
                     title: "Website",
-                    description: "http://www.rockstargames.com/V/"
+                    description: presenter.item?.website ?? ""
                 )
             }
         }
     }
     var imageView : some View {
         ZStack {
-            Image(AppIcons.imgGames)
-                .resizable()
+            NetImageView(url: presenter.item?.background_image ?? "")
             RoundedRectangle(cornerRadius: 0)
                 .foregroundColor(AppColors.CoverColor)
                 .frame(height: .infinity)
@@ -64,6 +88,6 @@ extension DetailView {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView()
+        AppRouters.toDetailView(id: 3498)
     }
 }

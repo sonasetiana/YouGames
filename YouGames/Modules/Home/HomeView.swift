@@ -88,6 +88,7 @@ extension HomeView {
                     if i < items.count {
                         let item = items[i]
                         ItemGames(
+                            id: item.id ?? 0,
                             imageUrl: item.background_image,
                             releaseAt: item.released,
                             title: item.name,

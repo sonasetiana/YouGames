@@ -7,39 +7,6 @@
 
 import SwiftUI
 
-struct ChildDetailView: View {
-    var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
-            VStack {
-                TitleBox()
-                DescriptionBox()
-                PlatformBox(
-                    platforms: [AppIcons.imgPC, AppIcons.imgXbox, AppIcons.imgNitendo, AppIcons.imgPlayStation]
-                )
-                DescriptionBox(
-                    title: "Tags",
-                    description: "Singleplayer, Steam Achievements, Multiplayer, Atmospheric, Full controller support, RPG, Co-OP, Great Soundtrack, Open World, cooperative, First-Person, Third Person"
-                )
-                StoresBox(
-                    stores: [AppIcons.imgPlayStation, AppIcons.imgXbox, AppIcons.imgEpicGame, AppIcons.imgSteamGame]
-                )
-                DescriptionBox(
-                    title: "Developers",
-                    description: "Rockstar North, Rockstar Games"
-                )
-                DescriptionBox(
-                    title: "Publishers",
-                    description: "Rockstar Games"
-                )
-                DescriptionBox(
-                    title: "Website",
-                    description: "http://www.rockstargames.com/V/"
-                )
-            }
-        }
-    }
-}
-
 struct TitleBox: View {
     var imageUrl: String?
     var releaseAt: String?
@@ -68,18 +35,18 @@ extension TitleBox {
     var dateView : some View {
         HStack {
             Spacer()
-            Text(releaseAt ?? "2013-09-17")
+            Text(releaseAt ?? "")
                 .font(.system(size: 12, weight: .light))
                 .foregroundColor(.white)
         }
     }
     var titleView : some View {
-        Text(title ?? "Grand Theft Auto V")
+        Text(title ?? "")
             .font(.system(size: 16, weight: .bold))
             .foregroundColor(.white)
     }
     var tagsView : some View {
-        Text(tags ?? "Action,  Adventure")
+        Text(tags ?? "")
             .font(.system(size: 12, weight: .regular))
             .foregroundColor(.white)
             .lineLimit(2)
@@ -90,7 +57,7 @@ extension TitleBox {
             Image(AppIcons.imgrRating)
                 .resizable()
                 .frame(width: 16, height: 16)
-            Text(rating ?? "4.7")
+            Text(rating ?? "")
                 .font(.system(size: 14, weight: .bold))
                 .foregroundColor(.white)
         }
@@ -120,13 +87,13 @@ struct DescriptionBox: View {
 
 extension DescriptionBox {
     var titleView : some View {
-        Text(title ?? "Description ")
+        Text(title ?? "Description")
             .font(.system(size: 16, weight: .bold))
             .foregroundColor(.white)
             .padding(.bottom, AppSpacing.tiny)
     }
     var descriptionView : some View {
-        Text(description ?? "Rockstar Games went bigger, since their previous installment of the series. You get the complicated and realistic world-building from Liberty City of GTA4 in the setting of lively and diverse Los Santos, from an old fan favorite GTA San Andreas. 561 different vehicles (including every transport you can operate) and the amount is rising with every update.")
+        Text(description ?? "")
             .font(.system(size: 12, weight: .regular))
             .foregroundColor(.white)
             .multilineTextAlignment(.leading)
@@ -177,15 +144,16 @@ extension PlatformBox {
 }
 
 struct StoresBox: View {
-    var stores: [String]?
+    var items: [ItemStore]?
     var body: some View {
         VStack(alignment:.leading) {
             titleView
-            ForEach((stores ?? []).indices) { index in
+            ForEach((items ?? []).indices) { i in
+                let item = items?[i]
                 ItemStoresBox(
-                    title: "PlayStation Store",
-                    site: "https://store.playstation.com",
-                    icon: stores?[index]
+                    title: item?.name ?? "",
+                    site: item?.domain ?? "",
+                    icon: item?.icon ?? ""
                 )
             }
         }
@@ -232,11 +200,5 @@ struct ItemStoresBox: View {
         .padding(.all, AppSpacing.regular)
         .background(AppColors.SecondaryColor)
         .cornerRadius(6)
-    }
-}
-
-struct ChildDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        ChildDetailView()
     }
 }

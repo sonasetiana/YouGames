@@ -17,8 +17,12 @@ class AppRouters {
         return HomeView(presenter: presenter)
     }
     
-    static func toDetailView() -> some View {
-        return DetailView()
+    static func toDetailView(id: Int) -> some View {
+        let interactor = DetailInteractor()
+        let presenter = DetailPresenter()
+        interactor.presenter = presenter
+        presenter.interactor = interactor
+        return DetailView(id: id, presenter: presenter)
     }
     
     static func toProfileView() -> some View {
