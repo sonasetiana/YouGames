@@ -20,12 +20,32 @@ class DetailViewModel : ObservableObject {
     @Published var item : DetailGameEntity?
     @Published var isFavorite : Bool = false
     
+    func setFavorite(item: DetailGameEntity) {
+        if isFavorite {
+            deleteFavorite(item: item)
+        } else {
+            saveToFavorite(item: item)
+        }
+    }
+    
     func saveToFavorite(item: DetailGameEntity) {
         useCase.saveToFavorite(item: item) { result in
             switch(result) {
                 case .success(let message) :
                     toast(message: message)
                     self.isDetailFavorite(id: item.id)
+                case .failed(let message) :
+                    toast(message: message)
+            }
+        }
+    }
+    
+    func deleteFavorite(item: DetailGameEntity) {
+        useCase.deleteFavorite(data: item) { result in
+            switch(result) {
+                case .success(let message) :
+                    toast(message: message)
+                self.isDetailFavorite(id: item.id)
                 case .failed(let message) :
                     toast(message: message)
             }

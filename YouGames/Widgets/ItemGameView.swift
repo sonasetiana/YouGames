@@ -14,6 +14,7 @@ struct ItemGameView: View {
     var title: String?
     var tags: String?
     var rating: String?
+    var isFavorite: Bool = false
     var favoriteCallback : (() -> Void)?
     var body: some View {
         NavigationLink(destination: AppModule.init().proviewDetailView(id: id)) {
@@ -78,7 +79,7 @@ extension ItemGameView {
                         favoriteCallback!()
                     },
                     label: {
-                        Image(AppIcons.imgUnfavorite)
+                        Image(self.isFavorite ? AppIcons.imgFavorite : AppIcons.imgUnfavorite)
                             .resizable()
                             .frame(width: 18, height: 18)
                     }

@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 class FavoriteViewModel : ObservableObject {
     private let useCase : FavoriteUseCase
     
@@ -20,8 +19,9 @@ class FavoriteViewModel : ObservableObject {
     @Published var favorites : [FavoriteData]  = []
     
     func fetchFavorite() {
+        print("fetchFavorite")
         loading = true
-        useCase.getListFavorite() { result in
+        useCase.getListFavorite { result in
             switch(result) {
                 case .success(let items) :
                     self.loading = false
@@ -33,11 +33,12 @@ class FavoriteViewModel : ObservableObject {
         }
     }
     
-    func deleteFavorite(favorite: FavoriteData) {
+    func deleteFavorite(index: Int, favorite: FavoriteData) {
         useCase.deleteFavorite(data: favorite) { result in
             switch(result) {
                 case .success(let message) :
                     toast(message: message)
+                    self.favorites.remove(at: index)
                 case .failed(let message) :
                     toast(message: message)
             }

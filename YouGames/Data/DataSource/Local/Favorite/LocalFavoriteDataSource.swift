@@ -79,6 +79,7 @@ class LocalFavoriteDataSourceImpl : LocalFavoriteDataSource {
         do{
             toFavoriteEntity(data: data)
             try coreData.save()
+            coreData.refreshAllObjects()
             completion(.success("Success update to favorite"))
         }catch {
             completion(.failed("Failed update to favorite"))
@@ -90,8 +91,13 @@ class LocalFavoriteDataSourceImpl : LocalFavoriteDataSource {
     func deleteFavorite(data: FavoriteData, completion: @escaping (BaseResult<String, String>) -> Void) {
         let coreData = coreDataManager.getViewContext()
         do {
-            let entity = getFavoriteEntity(data: data)
-            coreData.delete(entity)
+            let fetchFavorite : NSFetchRequest<FavoriteEntity> = FavoriteEntity.fetchRequest()
+            let results = try coreData.fetch(fetchFavorite)
+            results.filter{
+                data.id == $0.id
+            }.forEach { item in
+                coreData.delete(item)
+            }
             try coreData.save()
             completion(.success("Success delete to favorite"))
         }catch {

@@ -10,6 +10,7 @@ import UIKit
 
 protocol DetailUseCase {
     func saveToFavorite(item: DetailGameEntity, completion: @escaping (BaseResult<String, String>) -> Void)
+    func deleteFavorite(data: DetailGameEntity, completion: @escaping (BaseResult<String, String>) -> Void)
     func getDetailGame(id: Int, completion: @escaping (BaseResult<DetailGameEntity, String>) -> Void)
     func findFavorite(id: Int, completion: @escaping (BaseResult<FavoriteData, String>) -> Void)
 }
@@ -46,6 +47,22 @@ class DetailInteractor : DetailUseCase {
     
     func findFavorite(id: Int, completion: @escaping (BaseResult<FavoriteData, String>) -> Void) {
         localRepository.findFavorite(id: id) { result in
+            completion(result)
+        }
+    }
+    
+    
+    func deleteFavorite(data: DetailGameEntity, completion: @escaping (BaseResult<String, String>) -> Void) {
+        let item = FavoriteData(
+            id: data.id ?? 0,
+            slug: data.slug ?? "",
+            name: data.name ?? "",
+            released: data.released ?? "",
+            image: data.background_image ?? "",
+            rating: data.rating ?? 0.0,
+            genres: arraysToString(items: data.genres ?? [])
+        )
+        localRepository.deleteFavorite(data: item) { result in
             completion(result)
         }
     }

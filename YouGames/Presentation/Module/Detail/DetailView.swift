@@ -50,7 +50,7 @@ extension DetailView {
                     rating: String(viewModel.item?.rating ?? 0.0),
                     isFavorite: viewModel.isFavorite,
                     favoriteCallback: {
-                        self.viewModel.saveToFavorite(item: viewModel.item!)
+                        self.viewModel.setFavorite(item: viewModel.item!)
                     }
                 )
                 DescriptionBox(description: viewModel.item?.description_raw)
@@ -81,11 +81,8 @@ extension DetailView {
     }
     var imageView : some View {
         ZStack {
-            NetImageView(
-                url: viewModel.item?.background_image ?? "",
-                width: .infinity,
-                height: .infinity
-            )
+            NetImageView(url: viewModel.item?.background_image ?? "",
+                         width: .infinity, height: 240)
             RoundedRectangle(cornerRadius: 0)
                 .foregroundColor(AppColors.CoverColor)
                 .frame(height: .infinity)
