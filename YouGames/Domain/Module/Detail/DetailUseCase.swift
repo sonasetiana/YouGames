@@ -51,7 +51,6 @@ class DetailInteractor : DetailUseCase {
         }
     }
     
-    
     func deleteFavorite(data: DetailGameEntity, completion: @escaping (BaseResult<String, String>) -> Void) {
         let item = FavoriteData(
             id: data.id ?? 0,

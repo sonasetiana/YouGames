@@ -43,7 +43,7 @@ class LocalFavoriteRepositoryImpl : LocalFavoriteRepository {
     }
     
     func getListFavorite(completion: @escaping (BaseResult<[FavoriteData], String>) -> Void) {
-        dataSource.getListFavorite() { result in
+        dataSource.getListFavorite { result in
             completion(result)
         }
     }

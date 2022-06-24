@@ -20,7 +20,19 @@ struct FavoriteView: View {
                     bottom: AppSpacing.medium,
                     trailing: AppSpacing.medium
                 ))
-            listView
+            if viewModel.loading {
+                LoadingView()
+            } else if !viewModel.error.isEmpty {
+                ErrorView(message: viewModel.error) {
+                    self.viewModel.fetchFavorite()
+                }
+            } else {
+                if viewModel.favorites.isEmpty {
+                    EmptyView(message: "You don't have favorite")
+                } else {
+                    listView
+                }
+            }
         }
         .edgesIgnoringSafeArea(.all)
         .background(AppColors.BackgroudColor)

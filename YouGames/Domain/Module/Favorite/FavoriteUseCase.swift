@@ -27,7 +27,7 @@ class FavoriteInteractor : FavoriteUseCase {
     }
     
     func getListFavorite(completion: @escaping (BaseResult<[FavoriteData], String>) -> Void) {
-        repository.getListFavorite() { result in
+        repository.getListFavorite { result in
             completion(result)
         }
     }
