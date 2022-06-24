@@ -61,7 +61,7 @@ class HomeViewModel : ObservableObject {
                 if !items.isEmpty {
                     self.nextPage += 1
                 }
-            case .failed(_) :
+            case .failed :
                 self.loadingMore = false
             }
         }

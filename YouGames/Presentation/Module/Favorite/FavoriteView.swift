@@ -11,15 +11,19 @@ struct FavoriteView: View {
     @ObservedObject var viewModel: FavoriteViewModel
     var body: some View {
         VStack(alignment: .leading){
-            Text("Favorite")
-                .font(.system(size: 24, weight: .bold))
-                .foregroundColor(.white)
-                .padding(EdgeInsets(
-                    top: 72,
-                    leading: AppSpacing.medium,
-                    bottom: AppSpacing.medium,
-                    trailing: AppSpacing.medium
-                ))
+            HStack {
+                Text("Favorite")
+                    .font(.system(size: 24, weight: .bold))
+                    .foregroundColor(.white)
+                    .padding(EdgeInsets(
+                        top: 72,
+                        leading: AppSpacing.medium,
+                        bottom: AppSpacing.medium,
+                        trailing: AppSpacing.medium
+                    ))
+                Spacer()
+            }
+            
             if viewModel.loading {
                 LoadingView()
             } else if !viewModel.error.isEmpty {
@@ -34,11 +38,12 @@ struct FavoriteView: View {
                 }
             }
         }
-        .edgesIgnoringSafeArea(.all)
+        .frame(maxWidth: .infinity)
         .background(AppColors.BackgroudColor)
         .onAppear(perform: {
             self.viewModel.fetchFavorite()
         })
+        .edgesIgnoringSafeArea(.all)
     }
 }
 

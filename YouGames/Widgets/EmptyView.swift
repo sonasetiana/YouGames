@@ -10,12 +10,14 @@ import SwiftUI
 struct EmptyView: View {
     var message : String?
     var body: some View {
-        VStack{
+        VStack(alignment: .center){
             Spacer()
             Text(message ?? "No Data Found")
                 .foregroundColor(.white)
             Spacer()
-        }.background(.black)
+        }
+        .frame(maxWidth: .infinity)
+        .background(.black)
     }
 }
 
