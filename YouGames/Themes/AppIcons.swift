@@ -13,7 +13,7 @@ struct AppIcons {
     static let imgEmail = "imgEmail"
     static let imgLocation = "imgLocation"
     static let imgUser = "imgUser"
-    static let imgrRating = "imgrRating"
+    static let imgRating = "imgRating"
     static let imgPC = "imgPC"
     static let imgEpicGame = "imgEpicGame"
     static let imgNitendo = "imgNitendo"
@@ -22,4 +22,6 @@ struct AppIcons {
     static let imgSteamGame = "imgSteamGame"
     static let imgGames = "imgGames"
     static let imgPhoto = "imgPhoto"
+    static let imgFavorite = "imgFavorite"
+    static let imgUnfavorite = "imgUnfavorite"
 }

@@ -11,7 +11,7 @@ import SwiftUI
 struct YouGamesApp: App {
     var body: some Scene {
         WindowGroup {
-            AppRouters.toHomeView()
+            AppModule.init().provideHomeView()
         }
     }
 }

@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Toast",
+        "repositoryURL": "https://github.com/BastiaanJansen/toast-swift",
+        "state": {
+          "branch": null,
+          "revision": "7fc825d0bbb55a8d98d46af48f51844e0298e7b5",
+          "version": "1.0.6"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

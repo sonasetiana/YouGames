@@ -8,7 +8,7 @@
 import Foundation
 
 struct AppNetwork{
-    
+
     static func listRequest<T: Decodable>(
          endPoint: String,
          resultType: T,
